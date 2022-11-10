@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="266dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/menu_text"
+        android:layout_width="285dp"
+        android:layout_height="123dp"
+        android:paddingTop="20dp"
+        android:text="오늘은 맛있는 크림파스타를 드세요~^^"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/menuname"
+        app:layout_constraintEnd_toEndOf="@+id/menuname"
+        app:layout_constraintStart_toStartOf="@+id/menuname"
+        app:layout_constraintTop_toTopOf="@+id/menuname"
+        app:layout_constraintVertical_bias="0.716" />
+
+    <TextView
+        android:id="@+id/menuname"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle"
+        android:elevation="30dp"
+        android:paddingTop="10dp"
+        android:text="크림파스타이건예시임"
+        android:textColor="#F6C649"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/menu_goto"
+        android:layout_width="351dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="#F6C649"
+        android:text="식당찾기"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuname" />
+
+    <Button
+        android:id="@+id/menu_again"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#F6C649"
+        android:text="다시하기"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_goto"
+        app:layout_constraintVertical_bias="0.214" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
