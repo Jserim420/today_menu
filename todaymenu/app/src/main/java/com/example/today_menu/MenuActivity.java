@@ -29,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
         // 햄버거 버튼 이미지 불러오기
         actionBar.setHomeAsUpIndicator(R.drawable.ic_others);
         // 툴바에 적힐 제목
-        actionBar.setTitle("오늘 뭐 먹지?");
+        actionBar.setTitle("오늘 뭐 먹지???");
         actionBar.setHomeButtonEnabled(true);
 
         Button pickBtn = findViewById(R.id.question_btn);
