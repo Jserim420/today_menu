@@ -12,4 +12,8 @@
     <string name="menu_login"><font color="#000000">과거 추천 음식</font></string>
     <string name="menu_star"><font color="#000000">음식 즐겨찾기</font></string>
 
+    <string-array name = "krs">
+        <item>비빔밥</item>
+        <item>덮밥</item>
+    </string-array>
 </resources>

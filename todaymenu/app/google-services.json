@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "34010247427",
+    "project_id": "todaymenu-6d922",
+    "storage_bucket": "todaymenu-6d922.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34010247427:android:1a2ba315ef9d915d3e7936",
+        "android_client_info": {
+          "package_name": "com.example.today_menu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34010247427-6avm6cpi9qj8g94558arl0519dg5b6jq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGXL367YdhZxRaG6WhCNfE_hgft9PKRkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34010247427-6avm6cpi9qj8g94558arl0519dg5b6jq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
