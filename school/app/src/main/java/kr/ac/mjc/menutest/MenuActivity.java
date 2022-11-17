@@ -14,7 +14,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainq_main);
 
-        Button koreanBtn = findViewById(R.id.korean_btn);
+        Button koreanBtn = findViewById(R.id.rice_btn);
 
         koreanBtn.setOnClickListener(new View.OnClickListener() {
             @Override

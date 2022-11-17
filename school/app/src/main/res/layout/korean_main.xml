@@ -16,7 +16,7 @@
         app:srcCompat="@mipmap/icon" />
 
     <Button
-        android:id="@+id/korean_btn"
+        android:id="@+id/rice_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/korean_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/rice_btn" />
 
     <ProgressBar
         android:id="@+id/progbar_pb"
