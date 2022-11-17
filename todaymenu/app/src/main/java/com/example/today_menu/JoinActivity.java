@@ -50,7 +50,7 @@ public class JoinActivity extends AppCompatActivity {
                 if(!email.contains("@")) {
                     Toast.makeText(JoinActivity.this, "올바른 일메일 방식으로 입력해 주세요.", Toast.LENGTH_LONG).show();
                 }
-                if(password.equals("비밀번호를 입력해주세요.")) {
+                if(password.equals("")) {
                     Toast.makeText(JoinActivity.this, "비밀번호를 입력해 주세요.", Toast.LENGTH_LONG).show();
                 }
                 if(!password.equals(passwordConfirm)) {
@@ -77,7 +77,7 @@ public class JoinActivity extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.d("JoinActiviy", e.getMessage());
+                                Log.d("JoinActivity", e.getMessage());
                                 Toast.makeText(JoinActivity.this, "회원가입에 실패하였습니다.", Toast.LENGTH_LONG).show();
                             }
                         });
