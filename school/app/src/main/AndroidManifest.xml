@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".KoreanActivity"></activity>
     </application>
 
 </manifest>

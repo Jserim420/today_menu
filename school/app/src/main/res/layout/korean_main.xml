@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/progbar_pb"
+        android:id="@+id/imageView4"
+        android:layout_width="148dp"
+        android:layout_height="155dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,37 +24,12 @@
         android:text="밥"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="303dp" />
+        app:layout_constraintTop_toBottomOf="@+id/progbar_pb" />
 
     <Button
-        android:id="@+id/snack_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:text="분식"
-        app:cornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etc_btn" />
-
-    <Button
-        android:id="@+id/etc_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:text="국/탕"
-        app:cornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/japanese_btn" />
-
-    <Button
-        android:id="@+id/japanese_btn"
+        android:id="@+id/seafood_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -63,24 +38,39 @@
         android:text="해산물"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chinese_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/beef_btn" />
 
     <Button
-        android:id="@+id/western_btn"
+        android:id="@+id/soup_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="25dp"
-        android:text="면"
+        android:text="국/탕"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seafood_btn" />
+
+    <Button
+        android:id="@+id/street_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="25dp"
+        android:text="분식"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/korean_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/seafood_btn" />
 
     <Button
-        android:id="@+id/chinese_btn"
+        android:id="@+id/beef_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -89,8 +79,23 @@
         android:text="고기"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/western_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/noodle_btn" />
+
+    <Button
+        android:id="@+id/noodle_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:text="면"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/korean_btn" />
 
     <ProgressBar
         android:id="@+id/progbar_pb"
@@ -99,12 +104,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:scrollbarSize="4dp"
-        android:progress="1"
         android:max="10"
+        android:paddingBottom="50dp"
+        android:progress="1"
+        android:scrollbarSize="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.393"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="187dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
