@@ -1,77 +1,51 @@
 package com.example.today_menu;
 
+import android.os.Bundle;
+import android.view.View;
 
+import com.example.today_menu.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    private AppBarConfiguration mAppBarConfiguration;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Log.d("MainActivity","onCreate");
 
-        EditText emailEt=findViewById(R.id.email_et);
-        EditText passwordEt=findViewById(R.id.password_et);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Button loginBtn=findViewById(R.id.login_btn);
-        Button joinBtn=findViewById(R.id.join_btn);
+        setSupportActionBar(binding.appBarMain.toolbar);
 
-        joinBtn .setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email=emailEt.getText().toString();
-                String password=passwordEt.getText().toString();
 
-                Intent intent=new Intent(MainActivity.this,JoinActivity.class);
-                intent.putExtra("email",email);
-                intent.putExtra("password",password);
-                startActivity(intent);
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
 
-            }
-        });
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("MainActivity","onStart");
-    }
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("MainActivity","onResume");
-    }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("MainActivity","onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("MainActivity","onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("MainActivity","onDestroy");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("MainActivity","onRestart");
     }
 }
