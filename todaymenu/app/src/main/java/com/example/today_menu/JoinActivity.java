@@ -27,7 +27,6 @@ public class JoinActivity extends AppCompatActivity {
         Button joinBtn = findViewById(R.id.join_btn);
 
 
-
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,10 +34,11 @@ public class JoinActivity extends AppCompatActivity {
                 String password = passwordEt.getText().toString();
 
                 Intent intent = new Intent(JoinActivity.this, LoginActivity.class);
-                startActivity(intent);
 
                 intent.putExtra("email", email);
                 intent.putExtra("password", password);
+
+                startActivity(intent);
             }
         });
     }
