@@ -173,3 +173,5 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/java,androidstudio,git
+todaymenu/.idea/misc.xml
+todaymenu/.idea/workspace.xml
