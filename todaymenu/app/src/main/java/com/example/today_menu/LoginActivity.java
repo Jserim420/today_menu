@@ -14,63 +14,35 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         Log.d("MainActivity","onCreate");
 
+        Intent intent1 = getIntent();
+        String email = intent1.getStringExtra("email");
+        String password = intent1.getStringExtra("password");
+
         EditText emailEt=findViewById(R.id.email_et);
+        emailEt.setText(email);
+
         EditText passwordEt=findViewById(R.id.password_et);
+        passwordEt.setText(password);
 
         Button loginBtn=findViewById(R.id.login_btn);
         Button joinBtn=findViewById(R.id.join_btn);
 
-        joinBtn .setOnClickListener(new View.OnClickListener() {
+        joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email=emailEt.getText().toString();
-                String password=passwordEt.getText().toString();
-
                 Intent intent=new Intent(LoginActivity.this,JoinActivity.class);
-                intent.putExtra("email",email);
-                intent.putExtra("password",password);
                 startActivity(intent);
-
             }
         });
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("MainActivity","onStart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("LoginActivity","onResume");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("LoginActivity","onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("LoginActivity","onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("LoginActivity","onDestroy");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("LoginActivity","onRestart");
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            }
+        });
     }
 }
