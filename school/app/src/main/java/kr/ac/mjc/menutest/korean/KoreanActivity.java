@@ -13,14 +13,14 @@ public class KoreanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.korean_main);
+        setContentView(R.layout.menupick_korean_main);
 
         Button riceBtn = findViewById(R.id.rice_btn);
 
         riceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_DegreeSpicy.class);
+                Intent intent = new Intent(KoreanActivity.this, kor_Spicy.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class KoreanActivity extends AppCompatActivity {
         noodleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_DegreeTemp.class);
+                Intent intent = new Intent(KoreanActivity.this, kor_Temp.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +40,7 @@ public class KoreanActivity extends AppCompatActivity {
         beefBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_TypeBeef.class);
+                Intent intent = new Intent(KoreanActivity.this, kor_Beef.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +50,7 @@ public class KoreanActivity extends AppCompatActivity {
         seafoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_DegreeFlavor.class);
+                Intent intent = new Intent(KoreanActivity.this, kor_Flavor.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class KoreanActivity extends AppCompatActivity {
         soupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_DegreeFlavor.class);
+                Intent intent = new Intent(KoreanActivity.this, kor_Flavor.class);
                 startActivity(intent);
             }
         });

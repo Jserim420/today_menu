@@ -1,4 +1,4 @@
-package kr.ac.mjc.menutest.japanese;
+package kr.ac.mjc.menutest.chinese;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,28 +10,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import kr.ac.mjc.menutest.R;
 import kr.ac.mjc.menutest.korean.KoreanActivity;
 
-public class jap_DegreeTemp extends AppCompatActivity {
+public class china_SpicySalty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kor_degree_temp);
+        setContentView(R.layout.menupick_jap_spicy);
 
-        Button coldBtn = findViewById(R.id.cold_btn);
+        Button spicyBtn = findViewById(R.id.spicy_btn);
 
-        coldBtn.setOnClickListener(new View.OnClickListener() {
+        spicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(jap_DegreeTemp.this, KoreanActivity.class);
+                Intent intent = new Intent(china_SpicySalty.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button hotBtn = findViewById(R.id.hot_btn);
+        Button nonspicyBtn = findViewById(R.id.nonspicy_btn);
 
-        hotBtn.setOnClickListener(new View.OnClickListener() {
+        nonspicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(jap_DegreeTemp.this, KoreanActivity.class);
+                Intent intent = new Intent(china_SpicySalty.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });

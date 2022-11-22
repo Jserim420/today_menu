@@ -1,4 +1,4 @@
-package kr.ac.mjc.menutest.japanese;
+package kr.ac.mjc.menutest.chinese;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +9,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import kr.ac.mjc.menutest.R;
 
-public class JapaneseActivity extends AppCompatActivity {
+public class ChineseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menupick_japanese_main);
+        setContentView(R.layout.menupick_chinese_main);
 
         Button riceBtn = findViewById(R.id.rice_btn);
 
         riceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(JapaneseActivity.this, jap_Spicy.class);
+                Intent intent = new Intent(ChineseActivity.this, china_SpicySalty.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class JapaneseActivity extends AppCompatActivity {
         noodleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(JapaneseActivity.this, jap_Temp.class);
+                Intent intent = new Intent(ChineseActivity.this, china_Spicy.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +40,7 @@ public class JapaneseActivity extends AppCompatActivity {
         beefBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(JapaneseActivity.this, jap_Beef.class);
+                Intent intent = new Intent(ChineseActivity.this, china_Beef.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +50,7 @@ public class JapaneseActivity extends AppCompatActivity {
         seafoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(JapaneseActivity.this, JapaneseActivity.class);
+                Intent intent = new Intent(ChineseActivity.this, china_Flavor.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class JapaneseActivity extends AppCompatActivity {
         soupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(JapaneseActivity.this, JapaneseActivity.class);
+                Intent intent = new Intent(ChineseActivity.this, china_soup.class);
                 startActivity(intent);
             }
         });

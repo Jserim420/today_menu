@@ -10,18 +10,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import kr.ac.mjc.menutest.R;
 import kr.ac.mjc.menutest.korean.KoreanActivity;
 
-public class jap_TypeBeef extends AppCompatActivity {
+public class jap_Beef extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.jap_type_beef);
+        setContentView(R.layout.menupick_jap_beef);
 
         Button cowBtn = findViewById(R.id.cow_btn);
 
         cowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(jap_TypeBeef.this, KoreanActivity.class);
+                Intent intent = new Intent(jap_Beef.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class jap_TypeBeef extends AppCompatActivity {
         pigBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(jap_TypeBeef.this, KoreanActivity.class);
+                Intent intent = new Intent(jap_Beef.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class jap_TypeBeef extends AppCompatActivity {
         chickenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(jap_TypeBeef.this, KoreanActivity.class);
+                Intent intent = new Intent(jap_Beef.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });

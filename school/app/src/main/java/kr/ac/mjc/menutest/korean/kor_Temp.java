@@ -9,18 +9,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import kr.ac.mjc.menutest.R;
 
-public class kor_DegreeTemp extends AppCompatActivity {
+public class kor_Temp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kor_degree_temp);
+        setContentView(R.layout.menupick_kor_temp);
 
         Button coldBtn = findViewById(R.id.cold_btn);
 
         coldBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeTemp.this, KoreanActivity.class);
+                Intent intent = new Intent(kor_Temp.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class kor_DegreeTemp extends AppCompatActivity {
         hotBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeTemp.this, KoreanActivity.class);
+                Intent intent = new Intent(kor_Temp.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });

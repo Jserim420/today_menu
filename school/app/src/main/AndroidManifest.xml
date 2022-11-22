@@ -25,15 +25,15 @@
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".korean.KoreanActivity"></activity>
         <activity android:name=".western.WesternActivity"></activity>
-        <activity android:name=".korean.kor_DegreeSpicy"></activity>
-        <activity android:name=".korean.kor_DegreeTemp"></activity>
-        <activity android:name=".korean.kor_TypeBeef"></activity>
-        <activity android:name=".korean.kor_DegreeFlavor"></activity>
-        <activity android:name=".korean.kor_DegreeSoup"></activity>
+        <activity android:name=".korean.kor_Spicy"></activity>
+        <activity android:name=".korean.kor_Temp"></activity>
+        <activity android:name=".korean.kor_Beef"></activity>
+        <activity android:name=".korean.kor_Flavor"></activity>
+        <activity android:name=".korean.kor_Soup"></activity>
         <activity android:name=".japanese.JapaneseActivity"></activity>
-        <activity android:name=".japanese.jap_DegreeSpicy"></activity>
-        <activity android:name=".japanese.jap_DegreeTemp"></activity>
-        <activity android:name=".japanese.jap_TypeBeef"></activity>
+        <activity android:name=".japanese.jap_Spicy"></activity>
+        <activity android:name=".japanese.jap_Temp"></activity>
+        <activity android:name=".japanese.jap_Beef"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package kr.ac.mjc.menutest.korean;
+package kr.ac.mjc.menutest.japanese;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,19 +8,20 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import kr.ac.mjc.menutest.R;
+import kr.ac.mjc.menutest.korean.KoreanActivity;
 
-public class kor_DegreeSpicy extends AppCompatActivity {
+public class jap_Spicy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kor_degree_spicy);
+        setContentView(R.layout.menupick_jap_spicy);
 
         Button spicyBtn = findViewById(R.id.spicy_btn);
 
         spicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeSpicy.this, KoreanActivity.class);
+                Intent intent = new Intent(jap_Spicy.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +31,7 @@ public class kor_DegreeSpicy extends AppCompatActivity {
         nonspicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeSpicy.this, KoreanActivity.class);
+                Intent intent = new Intent(jap_Spicy.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });

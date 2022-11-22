@@ -9,18 +9,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import kr.ac.mjc.menutest.R;
 
-public class kor_DegreeFlavor extends AppCompatActivity {
+public class kor_Soup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kor_degree_flavor);
+        setContentView(R.layout.menupick_kor_soup);
 
         Button spicyBtn = findViewById(R.id.spicy_btn);
 
         spicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeFlavor.this, KoreanActivity.class);
+                Intent intent = new Intent(kor_Soup.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,27 +30,17 @@ public class kor_DegreeFlavor extends AppCompatActivity {
         nonspicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeFlavor.this, KoreanActivity.class);
+                Intent intent = new Intent(kor_Soup.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button cleanBtn = findViewById(R.id.clean_btn);
+        Button coolBtn = findViewById(R.id.cool_btn);
 
-        cleanBtn.setOnClickListener(new View.OnClickListener() {
+        coolBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeFlavor.this, KoreanActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button saltyBtn = findViewById(R.id.salty_btn);
-
-        saltyBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(kor_DegreeFlavor.this, KoreanActivity.class);
+                Intent intent = new Intent(kor_Soup.this, KoreanActivity.class);
                 startActivity(intent);
             }
         });
