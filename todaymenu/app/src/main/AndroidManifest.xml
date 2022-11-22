@@ -37,6 +37,7 @@
         <activity android:name=".menuPick.MenuStartActivity" />
         <activity android:name=".menuPick.StartQuestionActivity"/>
         <activity android:name=".menuPick.korean.KoreanActivity"/>
+        <activity android:name=".menuPick.korean.kor_Spicy" />
     </application>
 
 

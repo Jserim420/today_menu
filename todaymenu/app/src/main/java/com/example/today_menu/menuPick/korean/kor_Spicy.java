@@ -33,17 +33,21 @@ public class kor_Spicy extends AppCompatActivity {
 
         foodCountry = pref.getString("FoodCountry","없음");
         food.setCountry(foodCountry);
-        foodCategory = pref.getString("FoodCategory", "없음");
+        foodCategory = pref.getString("categoryFood", "없음");
+        food.setCategoryFood(foodCategory);
 
         Button spicyBtn = findViewById(R.id.spicy_btn);
+
+        Log.d("kor_Spicy_country", food.getCountry());
+        Log.d("kor_Spicy_Category", food.getCategoryFood());
 
         spicyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("kor_Spicy_country", food.getCountry());
-                
-                Intent intent = new Intent(kor_Spicy.this, KoreanActivity.class);
-                startActivity(intent);
+                Log.d("kor_Spicy_Category", food.getCategoryFood());
+                // Intent intent = new Intent(kor_Spicy.this, KoreanActivity.class);
+                // startActivity(intent);
             }
         });
 

@@ -36,6 +36,8 @@ public class KoreanActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 editor.putString("categoryFood", "밥");
+                editor.apply();
+                
                 Intent intent = new Intent(KoreanActivity.this, kor_Spicy.class);
                 startActivity(intent);
             }
