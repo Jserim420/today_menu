@@ -10,7 +10,6 @@
     <string name="menu_home">오늘 뭐 먹지?</string>
     <string name="menu_custom"><font color="#000000">마이페이지</font></string>
     <string name="menu_star"><font color="#000000">음식 즐겨찾기</font></string>
-    <string name="menu_logout"><font color="#000000">로그아웃</font></string>
 
     <string-array name = "krs">
         <item>비빔밥</item>

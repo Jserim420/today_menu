@@ -17,8 +17,5 @@
             android:id="@+id/nav_star"
             android:icon="@android:drawable/btn_star"
             android:title="@string/menu_star" />
-        <item
-            android:id="@+id/nav_logout"
-            android:title="@string/menu_logout" />
     </group>
 </menu>

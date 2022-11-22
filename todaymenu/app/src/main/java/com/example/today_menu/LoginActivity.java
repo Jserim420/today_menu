@@ -25,10 +25,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        FirebaseApp.initializeApp(this);
                 
         FirebaseAuth auth = FirebaseAuth.getInstance();
+        completeLogin();
 
         // 회원가입->로그인 정보 불러오기
         Intent intent1 = getIntent();
