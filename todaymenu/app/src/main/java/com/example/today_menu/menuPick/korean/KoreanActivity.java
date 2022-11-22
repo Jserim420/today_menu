@@ -31,19 +31,21 @@ public class KoreanActivity extends AppCompatActivity {
         foodCountry = pref.getString("FoodCountry","없음");
 
         Button riceBtn = findViewById(R.id.rice_btn);
+        Button noodleBtn = findViewById(R.id.noodle_btn);
+        Button beefBtn = findViewById(R.id.beef_btn);
+        Button seafoodBtn = findViewById(R.id.seafood_btn);
+        Button soupBtn = findViewById(R.id.soup_btn);
 
         riceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putString("categoryFood", "밥");
+                editor.putString("FoodCategory", "밥");
                 editor.apply();
-                
+
                 Intent intent = new Intent(KoreanActivity.this, kor_Spicy.class);
                 startActivity(intent);
             }
         });
-
-        Button noodleBtn = findViewById(R.id.noodle_btn);
 
         noodleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +55,6 @@ public class KoreanActivity extends AppCompatActivity {
             }
         });
 
-        Button beefBtn = findViewById(R.id.beef_btn);
-
         beefBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,8 +63,6 @@ public class KoreanActivity extends AppCompatActivity {
             }
         });
 
-        Button seafoodBtn = findViewById(R.id.seafood_btn);
-
         seafoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,8 +70,6 @@ public class KoreanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button soupBtn = findViewById(R.id.soup_btn);
 
         soupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
