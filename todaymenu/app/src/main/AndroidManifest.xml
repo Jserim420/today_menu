@@ -35,10 +35,15 @@
         <activity android:name=".JoinActivity"/>
         <activity android:name=".MapActivity"/>
         <activity android:name=".menuPick.MenuStartActivity" />
+        <activity android:name=".menuPick.MenuResultActivity" />
         <activity android:name=".menuPick.StartQuestionActivity"/>
         <activity android:name=".menuPick.korean.KoreanActivity"/>
-        <activity android:name=".menuPick.korean.kor_Spicy" />
-        <activity android:name=".menuPick.MenuResultActivity" />
+        <activity android:name=".menuPick.korean.KorSpicy" />
+        <activity android:name=".menuPick.korean.KorBeef" />
+        <activity android:name=".menuPick.korean.KorDefault" />
+        <activity android:name=".menuPick.korean.KorSoup" />
+        <activity android:name=".menuPick.korean.KorTemp" />
+
     </application>
 
 

@@ -1,11 +1,21 @@
 package com.example.today_menu;
 
 public class Food {
+
+    private String id;
     private String name;
     private int price;
     private String country;
     private String categoryFood;
     private String taste;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

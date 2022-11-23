@@ -1,13 +1,21 @@
 package com.example.today_menu.menuPick;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.today_menu.Food;
 import com.example.today_menu.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -15,13 +23,28 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class MenuResultActivity extends AppCompatActivity {
 
-    FirebaseFirestore fireStore;
+
+    ArrayList<Food> PerfectFoodList = new ArrayList<>();
+    ArrayList<Food> NiceFoodList = new ArrayList<>();
+    ArrayList<Food> GoodFoodList = new ArrayList<>();
+    ArrayList<Food> FryFoodList = new ArrayList<>();
+
+
+    FoodAdapter mFoodAdapter;
 
     String foodCountry ;
     String foodCategory ;
     String foodTaste ;
+
+    int random = (int) Math.random();
+
+    FirebaseFirestore fireStore=FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,27 +54,74 @@ public class MenuResultActivity extends AppCompatActivity {
         fireStore = FirebaseFirestore.getInstance();
         TextView resultTv = findViewById(R.id.result_tv);
 
-        foodCountry = getIntent().getStringExtra("country");
-        foodCategory = getIntent().getStringExtra("category");
-        foodTaste = getIntent().getStringExtra("taste");
+        foodCountry = getIntent().getStringExtra("FoodCountry");
+        foodCategory = getIntent().getStringExtra("FoodCategory");
+        foodTaste = getIntent().getStringExtra("FoodTaste");
 
+        Button againBtn = findViewById(R.id.again_btn);
 
+        againBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuResultActivity.this, StartQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        loadFoodList(resultTv);
+    }
+
+    public void loadFoodList(TextView textView) {
         fireStore.collection("Food")
-                .whereEqualTo(foodCountry, true)
-                .whereEqualTo(foodCategory, true)
-                .whereEqualTo(foodTaste, true)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        Log.d("MenuResultActivity", "OnSuccess");
-                        for(DocumentSnapshot item : queryDocumentSnapshots) {
-                            String result = item.get("name").toString();
-                            Log.d("MenuResultActivity", result);
+                        Log.d("MenuResultActivity", foodCountry);
+                        Log.d("MenuResultActivity", foodCategory);
+                        Log.d("MenuResultActivity", foodTaste);
+                        List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
+                        for(DocumentSnapshot snapshot : documents) {
+                            if(snapshot.get("country") != null && snapshot.get("country").equals(foodCountry)) {
+                                Log.d("MenuResultActivity", snapshot.get("country").toString());
+                                if (snapshot.get("categoryFood") != null && snapshot.get("categoryFood").equals(foodCategory)) {
+                                    Log.d("MenuResultActivity", snapshot.get("categoryFood").toString());
+                                    if (snapshot.get("categoryFood").equals("분식")) {
+                                        Food food = snapshot.toObject(Food.class);
+                                        String id = snapshot.getId();
+                                        food.setId(id);
+                                        FryFoodList.add(food);
+                                    } else if (snapshot.get("taste") != null && snapshot.get("taste").equals(foodTaste)) {
+                                        Log.d("MenuResultActivity", snapshot.get("taste").toString());
+                                        Log.d("MenuResultActivity", snapshot.get("name").toString());
 
-                            resultTv.setText(result);
+                                        Food food = snapshot.toObject(Food.class);
+                                        String id = snapshot.getId();
+                                        food.setId(id);
+                                        PerfectFoodList.add(food);
+                                    }
+                                } else {
+                                    Food food = snapshot.toObject(Food.class);
+                                    String id = snapshot.getId();
+                                    food.setId(id);
+                                    GoodFoodList.add(food);
+                                }
+                            } else {
+                                Food food = snapshot.toObject(Food.class);
+                                String id = snapshot.getId();
+                                food.setId(id);
+                                NiceFoodList.add(food);
+                            }
+                            }
+
+                        if(PerfectFoodList.size()>0) {
+                            Random random = new Random();
+                            int randomIndex = random.nextInt(PerfectFoodList.size());
+                            textView.setText(PerfectFoodList.get(randomIndex).getName());
+
+                            Log.d("MenuResultActivity", "OnSuccess");
                         }
-                        Log.d("MenuResultActivity", "OnSuccess_for");
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -60,8 +130,6 @@ public class MenuResultActivity extends AppCompatActivity {
                         Log.d("MenuResultActivity", e.getMessage());
                     }
                 });
-
-
 
     }
 

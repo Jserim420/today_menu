@@ -10,21 +10,19 @@
         android:id="@+id/result_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:gravity="center"
         android:text="TextView"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="351dp" />
 
     <Button
         android:id="@+id/restaurant_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="21dp"
         android:layout_marginRight="60dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"

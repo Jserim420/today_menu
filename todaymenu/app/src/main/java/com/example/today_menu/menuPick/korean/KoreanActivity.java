@@ -4,18 +4,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.today_menu.Food;
 import com.example.today_menu.R;
+import com.example.today_menu.menuPick.MenuResultActivity;
 
 public class KoreanActivity extends AppCompatActivity {
 
-    SharedPreferences pref;          // 프리퍼런스
+    SharedPreferences pref;
     SharedPreferences.Editor editor;
 
     String foodCountry;
@@ -25,16 +24,15 @@ public class KoreanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menupick_korean_main);
 
-        pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        pref = getSharedPreferences("food", Activity.MODE_PRIVATE);
         editor = pref.edit();
-
-        foodCountry = pref.getString("FoodCountry","없음");
 
         Button riceBtn = findViewById(R.id.rice_btn);
         Button noodleBtn = findViewById(R.id.noodle_btn);
         Button beefBtn = findViewById(R.id.beef_btn);
         Button seafoodBtn = findViewById(R.id.seafood_btn);
         Button soupBtn = findViewById(R.id.soup_btn);
+        Button fryBtn = findViewById(R.id.fry_btn);
 
         riceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +40,7 @@ public class KoreanActivity extends AppCompatActivity {
                 editor.putString("FoodCategory", "밥");
                 editor.apply();
 
-                Intent intent = new Intent(KoreanActivity.this, kor_Spicy.class);
+                Intent intent = new Intent(KoreanActivity.this, KorDefault.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +48,10 @@ public class KoreanActivity extends AppCompatActivity {
         noodleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_Temp.class);
+                editor.putString("FoodCategory", "면");
+                editor.apply();
+
+                Intent intent = new Intent(KoreanActivity.this, KorTemp.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +59,10 @@ public class KoreanActivity extends AppCompatActivity {
         beefBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_Beef.class);
+                editor.putString("FoodCategory", "고기");
+                editor.apply();
+
+                Intent intent = new Intent(KoreanActivity.this, KorBeef.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +70,10 @@ public class KoreanActivity extends AppCompatActivity {
         seafoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_Flavor.class);
+                editor.putString("FoodCategory", "해산물");
+                editor.apply();
+
+                Intent intent = new Intent(KoreanActivity.this, KorDefault.class);
                 startActivity(intent);
             }
         });
@@ -74,7 +81,21 @@ public class KoreanActivity extends AppCompatActivity {
         soupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KoreanActivity.this, kor_Flavor.class);
+                editor.putString("FoodCategory", "국/탕");
+                editor.apply();
+
+                Intent intent = new Intent(KoreanActivity.this, KorSoup.class);
+                startActivity(intent);
+            }
+        });
+
+        fryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putString("FoodCategory", "분식");
+                editor.apply();
+
+                Intent intent = new Intent(KoreanActivity.this, MenuResultActivity.class);
                 startActivity(intent);
             }
         });

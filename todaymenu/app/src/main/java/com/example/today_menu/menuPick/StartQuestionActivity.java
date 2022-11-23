@@ -32,9 +32,8 @@ public class StartQuestionActivity extends AppCompatActivity {
         Button chineseBtn = findViewById(R.id.chinese_btn);
         Button etcBtn = findViewById(R.id.etc_btn);
 
-        pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        pref = getSharedPreferences("food", Activity.MODE_PRIVATE);
         editor = pref.edit();
-        getSharedPreferences("pref", Activity.MODE_PRIVATE);
 
         koreanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
