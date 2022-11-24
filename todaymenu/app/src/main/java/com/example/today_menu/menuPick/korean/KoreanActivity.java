@@ -96,6 +96,7 @@ public class KoreanActivity extends AppCompatActivity {
                 editor.apply();
 
                 Intent intent = new Intent(KoreanActivity.this, MenuResultActivity.class);
+                intent.putExtra("IntentKind", "분식");
                 startActivity(intent);
             }
         });

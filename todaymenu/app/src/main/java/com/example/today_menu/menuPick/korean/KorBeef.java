@@ -21,11 +21,13 @@ public class KorBeef extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menupick_kor_beef);
+        setContentView(R.layout.menupick_activity_beef);
 
         Button cowBtn = findViewById(R.id.cow_btn);
         Button pigBtn = findViewById(R.id.pig_btn);
         Button chickenBtn = findViewById(R.id.chicken_btn);
+
+        findViewById(R.id.sheep_btn).setVisibility(View.GONE);
 
         pref = getSharedPreferences("food", Activity.MODE_PRIVATE);
         editor = pref.edit();

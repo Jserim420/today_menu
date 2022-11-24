@@ -37,7 +37,7 @@ public class jap_Beef extends AppCompatActivity {
             }
         });
 
-        Button chickenBtn = findViewById(R.id.chicken_btn);
+        Button chickenBtn = findViewById(R.id.sheep_btn);
 
         chickenBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cow_btn" />
 
     <Button
-        android:id="@+id/chicken_btn"
+        android:id="@+id/sheep_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"

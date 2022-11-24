@@ -1,11 +1,14 @@
 package com.example.today_menu;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.today_menu.databinding.ActivityMainBinding;
+import com.example.today_menu.menuPick.MenuResultActivity;
 import com.example.today_menu.menuPick.MenuStartActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,11 +56,23 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        Button questionBtn = findViewById(R.id.question_btn);
+
+        ImageButton questionBtn = findViewById(R.id.question_btn);
+        ImageButton randomBtn = findViewById(R.id.random_btn);
+
         questionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuStartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        randomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MenuResultActivity.class);
+                intent.putExtra("IntentKind", "random");
                 startActivity(intent);
             }
         });
