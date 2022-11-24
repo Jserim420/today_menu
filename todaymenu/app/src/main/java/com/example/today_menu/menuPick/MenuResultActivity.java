@@ -80,17 +80,23 @@ public class MenuResultActivity extends AppCompatActivity {
                         Log.d("MenuResultActivity", foodCountry);
                         Log.d("MenuResultActivity", foodCategory);
                         Log.d("MenuResultActivity", foodTaste);
+                        Random random = new Random();
                         List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
                         for(DocumentSnapshot snapshot : documents) {
                             if(snapshot.get("country") != null && snapshot.get("country").equals(foodCountry)) {
-                                Log.d("MenuResultActivity", snapshot.get("country").toString());
+                                // Log.d("MenuResultActivity", snapshot.get("country").toString());
                                 if (snapshot.get("categoryFood") != null && snapshot.get("categoryFood").equals(foodCategory)) {
-                                    Log.d("MenuResultActivity", snapshot.get("categoryFood").toString());
+                                    // Log.d("MenuResultActivity", snapshot.get("categoryFood").toString());
                                     if (snapshot.get("categoryFood").equals("분식")) {
                                         Food food = snapshot.toObject(Food.class);
                                         String id = snapshot.getId();
                                         food.setId(id);
                                         FryFoodList.add(food);
+
+                                        int randomIndex = random.nextInt(FryFoodList.size());
+                                        textView.setText(FryFoodList.get(randomIndex).getName());
+                                        Log.d("MenuResultActivity", "FryFoodList");
+
                                     } else if (snapshot.get("taste") != null && snapshot.get("taste").equals(foodTaste)) {
                                         Log.d("MenuResultActivity", snapshot.get("taste").toString());
                                         Log.d("MenuResultActivity", snapshot.get("name").toString());
@@ -99,28 +105,32 @@ public class MenuResultActivity extends AppCompatActivity {
                                         String id = snapshot.getId();
                                         food.setId(id);
                                         PerfectFoodList.add(food);
+
+                                        int randomIndex = random.nextInt(PerfectFoodList.size());
+                                        textView.setText(PerfectFoodList.get(randomIndex).getName());
+                                        Log.d("MenuResultActivity", "PerfectFoodList");
                                     }
                                 } else {
                                     Food food = snapshot.toObject(Food.class);
                                     String id = snapshot.getId();
                                     food.setId(id);
                                     GoodFoodList.add(food);
+
+                                    int randomIndex = random.nextInt(GoodFoodList.size());
+                                    textView.setText(GoodFoodList.get(randomIndex).getName());
+                                    Log.d("MenuResultActivity", "GoodFoodList");
                                 }
                             } else {
                                 Food food = snapshot.toObject(Food.class);
                                 String id = snapshot.getId();
                                 food.setId(id);
                                 NiceFoodList.add(food);
+
+                                int randomIndex = random.nextInt(NiceFoodList.size());
+                                textView.setText(NiceFoodList.get(randomIndex).getName());
+                                Log.d("MenuResultActivity", "NiceFoodList");
                             }
                             }
-
-                        if(PerfectFoodList.size()>0) {
-                            Random random = new Random();
-                            int randomIndex = random.nextInt(PerfectFoodList.size());
-                            textView.setText(PerfectFoodList.get(randomIndex).getName());
-
-                            Log.d("MenuResultActivity", "OnSuccess");
-                        }
 
                     }
                 })
