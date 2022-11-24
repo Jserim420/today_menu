@@ -5,10 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/icon" />
+
     <Button
         android:id="@+id/rice_btn"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="밥"
         app:cornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@+id/progbar_pb6"
@@ -18,7 +30,7 @@
         android:id="@+id/noodle_btn"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="면"
         app:cornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@+id/rice_btn"
@@ -28,7 +40,7 @@
         android:id="@+id/beef_btn"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="고기"
         app:cornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@+id/noodle_btn"
@@ -38,7 +50,7 @@
         android:id="@+id/soup_btn"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="국/탕"
         app:cornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@+id/seafood_btn"
@@ -48,7 +60,7 @@
         android:id="@+id/fry_btn"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="볶음"
         app:cornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@+id/soup_btn"
@@ -58,28 +70,18 @@
         android:id="@+id/seafood_btn"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="해산물"
         app:cornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@+id/beef_btn"
         tools:layout_editor_absoluteX="40dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/icon" />
 
     <ProgressBar
         android:id="@+id/progbar_pb6"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="312dp"
         android:layout_height="60dp"
+        android:layout_marginTop="4dp"
         android:max="3"
         android:progress="2"
         android:scrollbarSize="4dp"

@@ -10,9 +10,10 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/icon" />
+        app:srcCompat="@mipmap/icon"
+        tools:layout_editor_absoluteY="86dp" />
 
     <ProgressBar
         android:id="@+id/progbar_pb"
@@ -20,26 +21,15 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="12dp"
         android:layout_marginRight="50dp"
         android:max="3"
         android:progress="3"
         android:scrollbarSize="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/spicy_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:text="매운거"
-        app:cornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progbar_pb" />
 
     <Button
         android:id="@+id/nonspicy_btn"
@@ -51,7 +41,6 @@
         android:text="안매운거"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spicy_btn" />
 
@@ -65,7 +54,6 @@
         android:text="깔끔"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nonspicy_btn" />
 
@@ -79,8 +67,20 @@
         android:text="짠맛"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clean_btn" />
+
+    <Button
+        android:id="@+id/spicy_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="40dp"
+        android:text="매운거"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progbar_pb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
