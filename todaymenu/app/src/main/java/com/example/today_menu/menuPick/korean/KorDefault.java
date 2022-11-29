@@ -85,6 +85,7 @@ public class KorDefault extends AppCompatActivity {
         intent.putExtra("FoodCountry", pref.getString("FoodCountry","없음"));
         intent.putExtra("FoodTaste", pref.getString("FoodTaste","없음"));
         intent.putExtra("FoodCategory", pref.getString("FoodCategory","없음"));
+        intent.putExtra("IntentKind", "else");
     }
 
 }

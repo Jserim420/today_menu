@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8"
         android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_weight="0.5"
+        tools:context=".MapsActivity" />
 
-<!--    <Button-->
-<!--        android:text="장소검색"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="0.2"-->
-<!--        android:id="@+id/button"/>-->
+    <!--    <Button-->
+    <!--        android:text="장소검색"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="0.2"-->
+    <!--        android:id="@+id/button"/>-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/map"-->
-<!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="0.8"-->
-<!--        tools:context=".MapsActivity" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/map"-->
+    <!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="0.8"-->
+    <!--        tools:context=".MapsActivity" />-->
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_gravity="center"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
@@ -40,13 +40,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/random_btn"
-                android:layout_width="93dp"
-                android:layout_height="78dp"
+                android:layout_width="130dp"
+                android:layout_height="124dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
@@ -73,9 +74,10 @@
 
             <ImageButton
                 android:id="@+id/question_btn"
-                android:layout_width="93dp"
-                android:layout_height="77dp"
+                android:layout_width="123dp"
+                android:layout_height="126dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitXY"
@@ -117,6 +119,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Favorite" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="logout" />
     </com.google.android.material.tabs.TabLayout>
 
 </LinearLayout>

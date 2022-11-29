@@ -75,7 +75,7 @@ public class MainActivityTest extends AppCompatActivity
     private GoogleMap mMap;
     private Marker currentMarker = null;
 
-    private static final String TAG = "googlemap_example";
+    private static final String TAG = "todayMenu_restaurant";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
     private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
@@ -90,7 +90,7 @@ public class MainActivityTest extends AppCompatActivity
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};  // 외부 저장소
 
 
-    Location mCurrentLocatiion;
+    Location mCurrentLocation;
     LatLng currentPosition;
 
 
@@ -114,7 +114,6 @@ public class MainActivityTest extends AppCompatActivity
         setContentView(R.layout.activity_main_test);
 
         previous_marker = new ArrayList<Marker>();
-        showPlaceInformation(currentPosition);
 
 //        Button button = (Button)findViewById(R.id.button);
 //        button.setOnClickListener(new View.OnClickListener() {
@@ -167,7 +166,6 @@ public class MainActivityTest extends AppCompatActivity
                 startActivity(intent);
             }
         });
-
 
     }
 
@@ -233,8 +231,8 @@ public class MainActivityTest extends AppCompatActivity
 
 
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
-        // 현재 오동작을 해서 주석처리
-        //mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+//         현재 오동작을 해서 주석처리
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 
             @Override
@@ -270,7 +268,7 @@ public class MainActivityTest extends AppCompatActivity
                 //현재 위치에 마커 생성하고 이동
                 setCurrentLocation(location, markerTitle, markerSnippet);
 
-                mCurrentLocatiion = location;
+                mCurrentLocation = location;
             }
 
 
@@ -375,8 +373,8 @@ public class MainActivityTest extends AppCompatActivity
 
 
         if (addresses == null || addresses.size() == 0) {
-            Toast.makeText(this, "주소 미발견", Toast.LENGTH_LONG).show();
-            return "주소 미발견";
+            Toast.makeText(this, "주소를 찾을 수 없습니다.", Toast.LENGTH_LONG).show();
+            return "주소를 찾을 수 없습니다.";
 
         } else {
             Address address = addresses.get(0);
@@ -411,8 +409,10 @@ public class MainActivityTest extends AppCompatActivity
 
         currentMarker = mMap.addMarker(markerOptions);
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentLatLng,16);
         mMap.moveCamera(cameraUpdate);
+
+        showPlaceInformation(currentPosition);
 
     }
 
@@ -422,8 +422,8 @@ public class MainActivityTest extends AppCompatActivity
 
         //디폴트 위치, Seoul
         LatLng DEFAULT_LOCATION = new LatLng(37.56, 126.97);
-        String markerTitle = "위치정보 가져올 수 없음";
-        String markerSnippet = "위치 퍼미션과 GPS 활성 요부 확인하세요";
+        String markerTitle = "위치정보를 가져올 수 없습니다.";
+        String markerSnippet = "GPS 활성 여부를 확인하세요";
 
 
         if (currentMarker != null) currentMarker.remove();
@@ -501,7 +501,7 @@ public class MainActivityTest extends AppCompatActivity
 
 
                     // 사용자가 거부만 선택한 경우에는 앱을 다시 실행하여 허용을 선택하면 앱을 사용할 수 있습니다.
-                    Snackbar.make(mLayout, "퍼미션이 거부되었습니다. 앱을 다시 실행하여 퍼미션을 허용해주세요. ",
+                    Snackbar.make(mLayout, "GPS 설정이 거부되었습니다. 앱을 다시 실행하여 GPS 활용을 허용해주세요. ",
                             Snackbar.LENGTH_INDEFINITE).setAction("확인", new View.OnClickListener() {
 
                         @Override
@@ -515,7 +515,7 @@ public class MainActivityTest extends AppCompatActivity
 
 
                     // "다시 묻지 않음"을 사용자가 체크하고 거부를 선택한 경우에는 설정(앱 정보)에서 퍼미션을 허용해야 앱을 사용할 수 있습니다.
-                    Snackbar.make(mLayout, "퍼미션이 거부되었습니다. 설정(앱 정보)에서 퍼미션을 허용해야 합니다. ",
+                    Snackbar.make(mLayout, "GPS 설정이 거부되었습니다. 설정(앱 정보)에서 GPS 활용을 허용해주세요. ",
                             Snackbar.LENGTH_INDEFINITE).setAction("확인", new View.OnClickListener() {
 
                         @Override
@@ -537,7 +537,7 @@ public class MainActivityTest extends AppCompatActivity
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivityTest.this);
         builder.setTitle("위치 서비스 비활성화");
         builder.setMessage("앱을 사용하기 위해서는 위치 서비스가 필요합니다.\n"
-                + "위치 설정을 수정하실래요?");
+                + "위치 설정을 수정하시겠습니까?");
         builder.setCancelable(true);
         builder.setPositiveButton("설정", new DialogInterface.OnClickListener() {
             @Override
@@ -642,7 +642,7 @@ public class MainActivityTest extends AppCompatActivity
                 .listener(MainActivityTest.this)
                 .key("AIzaSyDL61CHY5SJ2SAAQG8T5cgOC66RCE378kk")
                 .latlng(location.latitude, location.longitude)//현재 위치
-                .radius(500) //500 미터 내에서 검색
+                .radius(650) //500 미터 내에서 검색
                 .type(PlaceType.RESTAURANT) //음식점
                 .language("ko","KR")
                 .build()

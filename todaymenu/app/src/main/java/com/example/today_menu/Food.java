@@ -2,12 +2,12 @@ package com.example.today_menu;
 
 public class Food {
 
-    private String id;
-    private String name;
-    private int price;
-    private String country;
-    private String categoryFood;
-    private String taste;
+    private String id="";
+    private String name="";
+    private int price=0;
+    private String country="";
+    private String categoryFood="";
+    private String taste="";
 
     public String getId() {
         return id;

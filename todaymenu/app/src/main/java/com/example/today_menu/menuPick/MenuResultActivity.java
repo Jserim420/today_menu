@@ -68,11 +68,12 @@ public class MenuResultActivity extends AppCompatActivity {
             }
         });
 
-        if(intentKind.equals("random")) {
+        if(intentKind !=null && intentKind.equals("random")) {
             loadRandomList(resultTv, infoTv);
-        } else if(intentKind.equals("분식")){
+        } else if(intentKind !=null && intentKind.equals("분식")){
             loadFryList(resultTv,infoTv);
         } else loadFoodList(resultTv, infoTv);
+
     }
 
     public void loadFoodList(TextView result, TextView info) {
@@ -81,10 +82,11 @@ public class MenuResultActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        PerfectFoodList.clear();
+
                         Log.d("MenuResultActivity", foodCountry);
                         Log.d("MenuResultActivity", foodCategory);
                         Log.d("MenuResultActivity", foodTaste);
-
                         List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
                         for(DocumentSnapshot snapshot : documents) {
                             if(snapshot.get("country") != null && snapshot.get("country").equals(foodCountry)) {
@@ -99,18 +101,15 @@ public class MenuResultActivity extends AppCompatActivity {
                                         String id = snapshot.getId();
                                         food.setId(id);
                                         PerfectFoodList.add(food);
-
-                                        int randomIndex = random.nextInt(PerfectFoodList.size());
-                                        String menuName = PerfectFoodList.get(randomIndex).getName();
-                                        result.setText(menuName);
-                                        info.setText("오늘은 맛있는 " + menuName + "을 먹으세요.");
-                                        Log.d("MenuResultActivity", "PerfectFoodList");
-                                        break;
                                     }
                                 }
                             }
                         }
-
+                        int randomIndex = random.nextInt(PerfectFoodList.size());
+                        String menuName = PerfectFoodList.get(randomIndex).getName();
+                        result.setText(menuName);
+                        info.setText("오늘은 맛있는 " + menuName + "을 먹으세요.");
+                        Log.d("MenuResultActivity", "PerfectFoodList");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -123,31 +122,33 @@ public class MenuResultActivity extends AppCompatActivity {
     }
 
     public void loadRandomList(TextView result, TextView info) {
-        fireStore.collection("Food").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
+        fireStore.collection("Food")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        RandomFoodList.clear();
 
-                for(DocumentSnapshot snapshot : queryDocumentSnapshots) {
-                    Food food = snapshot.toObject(Food.class);
-                    String id = snapshot.getId();
-                    food.setId(id);
-                    RandomFoodList.add(food);
-
-                    int randomIndex = random.nextInt(RandomFoodList.size());
-                    String menuName = RandomFoodList.get(randomIndex).getName();
-                    result.setText(menuName);
-                    info.setText("오늘은 맛있는 " + menuName + "을 먹으세요.");
-                    Log.d("MenuResultActivity", "RandomFoodList");
-                }
-            }
+                        List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
+                        for(DocumentSnapshot snapshot : documents) {
+                            String string = snapshot.get("price").toString();
+                            Food food = snapshot.toObject(Food.class);
+                            String id = snapshot.getId();
+                            food.setId(id);
+                            RandomFoodList.add(food);
+                        }
+                        int randomIndex = random.nextInt(RandomFoodList.size());
+                        String menuName = RandomFoodList.get(randomIndex).getName();
+                        result.setText(menuName);
+                        info.setText("오늘은 맛있는 " + menuName + "을 먹으세요.");
+                        Log.d("MenuResultActivity", "RandomFoodList");
+                    }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.d("MenuResultActivity", e.getMessage());
             }
         });
-
     }
 
     public void loadFryList(TextView result, TextView info) {
@@ -156,19 +157,18 @@ public class MenuResultActivity extends AppCompatActivity {
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
                 for(DocumentSnapshot snapshot: queryDocumentSnapshots) {
-                    if (snapshot.get("categoryFood").equals("분식")) {
+                    if (snapshot.get("categoryFood") != null && snapshot.get("categoryFood").equals("분식")) {
                         Food food = snapshot.toObject(Food.class);
                         String id = snapshot.getId();
                         food.setId(id);
                         FryFoodList.add(food);
-
-                        int randomIndex = random.nextInt(FryFoodList.size());
-                        String menuName = FryFoodList.get(randomIndex).getName();
-                        result.setText(menuName);
-                        info.setText("오늘은 맛있는 " + menuName + "을 먹으세요.");
-                        Log.d("MenuResultActivity", "FryFoodList");
                         }
                     }
+                int randomIndex = random.nextInt(FryFoodList.size());
+                String menuName = FryFoodList.get(randomIndex).getName();
+                result.setText(menuName);
+                info.setText("오늘은 맛있는 " + menuName + "을 먹으세요.");
+                Log.d("MenuResultActivity", "FryFoodList");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
