@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.today_menu">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="false"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/icon"
@@ -22,7 +24,7 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".MainActivityTest"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Today_menu.NoActionBar"/>
 
@@ -34,9 +36,13 @@
             </intent-filter>
 
         </activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="37de20222a675f29ef4ed38363aa6545" />
+
         <activity android:name=".LoginActivity"/>
         <activity android:name=".JoinActivity"/>
-        <activity android:name=".MapActivity"/>
         <activity android:name=".menuPick.MenuStartActivity" />
         <activity android:name=".menuPick.MenuResultActivity" />
         <activity android:name=".menuPick.StartQuestionActivity"/>
