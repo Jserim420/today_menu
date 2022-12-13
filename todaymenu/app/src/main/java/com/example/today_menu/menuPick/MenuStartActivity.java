@@ -22,7 +22,8 @@ public class MenuStartActivity extends AppCompatActivity {
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuStartActivity.this, StartQuestionActivity.class);
+                Intent intent = new Intent(MenuStartActivity.this, MenuPriceActivity.class);
+                intent.putExtra("IntentKind", " ");
                 startActivity(intent);
             }
         });

@@ -16,18 +16,4 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
     </style>
-
-    <style name="Theme.Today_menu.NoActionBar">
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">true</item>
-
-
-    </style>
-
-    <style name="Theme.Today_menu.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Today_menu.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-
-
 </resources>

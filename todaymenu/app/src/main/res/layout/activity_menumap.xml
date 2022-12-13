@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="오늘 뭐 먹지?"
+            android:textColor="@color/purple_500"
+            android:textSize="20dp">
+
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/current_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="351dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="4dp"
+        android:minWidth="32dp"
+        android:minHeight="48dp"
+        android:src="@android:drawable/ic_menu_mylocation" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/again_btn"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="주변에 추천 음식점이 없다면?"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/again_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/find_res_btn"
+        android:background="@color/white"
+        android:text="다시하기"
+        android:textSize="20sp"
+        app:cornerRadius="50dp" />
+
+    <Button
+        android:id="@+id/find_res_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:text="다른 음식점 찾으러 가기"
+        android:textSize="20sp"
+        app:cornerRadius="50dp" />
+
+</RelativeLayout>

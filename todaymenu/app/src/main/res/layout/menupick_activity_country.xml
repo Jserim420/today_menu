@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainq"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center|center_vertical"
-    android:gravity="center|center_vertical"
+    android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
@@ -16,53 +16,63 @@
         tools:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <ProgressBar
-        android:id="@+id/progressBar4"
+        android:id="@+id/progressBar5"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:max="4"
-        android:progress="4" />
+        android:progress="2" />
 
     <Button
-        android:id="@+id/pig_btn"
+        android:id="@+id/korean_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:text="돼지"
+        android:text="한식"
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/chicken_btn"
+        android:id="@+id/chinese_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:text="닭"
+        android:text="중식"
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/sheep_btn"
+        android:id="@+id/japanese_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:text="양"
+        android:text="일식"
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/cow_btn"
+        android:id="@+id/western_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:text="소"
+        android:text="양식"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/asian_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:text="아시안"
         app:cornerRadius="30dp" />
 
 </LinearLayout>

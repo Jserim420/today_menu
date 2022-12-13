@@ -26,7 +26,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Today_menu.NoActionBar"/>
+            android:theme="@style/Theme.Today_menu"/>
 
         <activity android:name=".SplashActivity"
             android:exported="true">
@@ -41,16 +41,33 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="37de20222a675f29ef4ed38363aa6545" />
 
+
         <activity android:name=".LoginActivity"/>
         <activity android:name=".JoinActivity"/>
         <activity android:name=".menuPick.MenuStartActivity" />
         <activity android:name=".menuPick.MenuResultActivity" />
         <activity android:name=".menuPick.StartQuestionActivity"/>
-        <activity android:name=".menuPick.korean.KoreanActivity"/>
-        <activity android:name=".menuPick.korean.KorBeef" />
-        <activity android:name=".menuPick.korean.KorDefault" />
-        <activity android:name=".menuPick.korean.KorSoup" />
-        <activity android:name=".menuPick.korean.KorTemp" />
+        <activity android:name=".menuPick.MenuPriceActivity"/>
+
+        <activity android:name=".mapdata.MapActivity"/>
+        <activity android:name=".mapdata.MenuMapActivity"/>
+
+        <activity android:name=".menuPick.taste.Beef" />
+        <activity android:name=".menuPick.taste.Temp" />
+        <activity android:name=".menuPick.taste.Spicy" />
+
+        <activity android:name=".menuPick.AsianActivity"/>
+        <activity android:name=".menuPick.ChineseActivity"/>
+        <activity android:name=".menuPick.JapaneseActivity"/>
+        <activity android:name=".menuPick.KoreanActivity"/>
+        <activity android:name=".menuPick.WesternActivity"/>
+
+        <activity android:name=".menuPick.KorFlavor" />
+        <activity android:name=".menuPick.KorSoup" />
+        <activity android:name=".menuPick.JapSeaFood"/>
+        <activity android:name=".menuPick.ChineseBeef"/>
+        <activity android:name=".menuPick.ChineseFlavor"/>
+        <activity android:name=".menuPick.WesFlavor"/>
 
     </application>
 

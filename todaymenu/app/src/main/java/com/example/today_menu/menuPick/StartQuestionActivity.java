@@ -4,17 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.today_menu.Food;
 import com.example.today_menu.R;
-import com.example.today_menu.menuPick.chinese.ChineseActivity;
-import com.example.today_menu.menuPick.japanese.JapaneseActivity;
-import com.example.today_menu.menuPick.korean.KoreanActivity;
-import com.example.today_menu.menuPick.western.WesternActivity;
 
 public class StartQuestionActivity extends AppCompatActivity {
 
@@ -24,16 +20,17 @@ public class StartQuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menupick_mainq_main);
+        setContentView(R.layout.menupick_activity_country);
 
         Button koreanBtn = findViewById(R.id.korean_btn);
         Button japaneseBtn = findViewById(R.id.japanese_btn);
         Button westernBtn = findViewById(R.id.western_btn);
         Button chineseBtn = findViewById(R.id.chinese_btn);
-        Button etcBtn = findViewById(R.id.etc_btn);
+        Button asianBtn = findViewById(R.id.asian_btn);
 
         pref = getSharedPreferences("food", Activity.MODE_PRIVATE);
         editor = pref.edit();
+       Log.d("Price", pref.getString("FoodPrice","0"));
 
         koreanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,18 +77,17 @@ public class StartQuestionActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        etcBtn.setOnClickListener(new View.OnClickListener() {
+        asianBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putString("FoodCountry", "기타");
+                editor.putString("FoodCountry", "아시안");
                 editor.apply();
 
-                Intent intent = new Intent(StartQuestionActivity.this, WesternActivity.class);
+                Intent intent = new Intent(StartQuestionActivity.this, AsianActivity.class);
                 startActivity(intent);
             }
         });
-         */
+
 
     }
 

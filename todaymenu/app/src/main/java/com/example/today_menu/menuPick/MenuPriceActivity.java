@@ -1,6 +1,5 @@
 package com.example.today_menu.menuPick;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,76 +26,73 @@ public class MenuPriceActivity extends AppCompatActivity{
         Button price10Btn = findViewById(R.id.price10_btn);
         Button price15Btn = findViewById(R.id.price15_btn);
         Button price20Btn = findViewById(R.id.price20_btn);
-        Button price30Btn = findViewById(R.id.price_over30_btn);
-        Button priceOver30Btn = findViewById(R.id.price_over30_btn);
+        Button price30Btn = findViewById(R.id.price30_btn);
+        Button noMatterBtn = findViewById(R.id.nomatter_btn);
 
         pref = getSharedPreferences("food", Activity.MODE_PRIVATE);
         editor = pref.edit();
 
+        String intentKind = getIntent().getStringExtra("IntentKind");
+
         price5Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("FoodPrice", 5000);
-                editor.apply();
-
-                Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
-                startActivity(intent);
+                setIntent("5000", intentKind);
             }
         });
 
         price10Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("FoodPrice", 10000);
-                editor.apply();
-
-                Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
-                startActivity(intent);
+                setIntent("10000", intentKind);
             }
         });
 
         price15Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("FoodPrice", 15000);
-                editor.apply();
-
-                Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
-                startActivity(intent);
+                setIntent("15000", intentKind);
             }
         });
 
         price20Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("FoodPrice", 20000);
-                editor.apply();
-
-                Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
-                startActivity(intent);
+                setIntent("20000", intentKind);
             }
         });
 
         price30Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("FoodPrice", 30000);
-                editor.apply();
-
-                Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
-                startActivity(intent);
+                setIntent("30000", intentKind);
             }
         });
 
-        priceOver30Btn.setOnClickListener(new View.OnClickListener() {
+
+        noMatterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putInt("FoodPrice", 31000);
-                editor.apply();
-
-                Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
-                startActivity(intent);
+                setIntent("0", intentKind);
             }
         });
     }
+
+    public void setIntent(String price, String intentKind) {
+
+        if(intentKind.equals("random")) {
+            Intent intent = new Intent(MenuPriceActivity.this, MenuResultActivity.class);
+            intent.putExtra("IntentKind", "random");
+            editor.putString("FoodPrice", price);
+            editor.apply();
+            intent.putExtra("FoodPrice", pref.getString("FoodPrice", "0"));
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(MenuPriceActivity.this, StartQuestionActivity.class);
+            editor.putString("FoodPrice", price);
+            editor.apply();
+            startActivity(intent);
+        }
+    }
+
 }

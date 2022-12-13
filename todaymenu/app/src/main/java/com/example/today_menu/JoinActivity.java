@@ -48,7 +48,7 @@ public class JoinActivity extends AppCompatActivity {
                     Toast.makeText(JoinActivity.this, "이메일을 입력해 주세요.", Toast.LENGTH_LONG).show();
                 }
                 if(!email.contains("@")) {
-                    Toast.makeText(JoinActivity.this, "올바른 일메일 방식으로 입력해 주세요.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(JoinActivity.this, "올바른 이메일 방식으로 입력해 주세요.", Toast.LENGTH_LONG).show();
                 }
                 if(password.equals("")) {
                     Toast.makeText(JoinActivity.this, "비밀번호를 입력해 주세요.", Toast.LENGTH_LONG).show();

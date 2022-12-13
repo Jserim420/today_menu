@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center|center_vertical"
-    android:gravity="center|center_vertical"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
@@ -16,53 +16,78 @@
         tools:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <ProgressBar
-        android:id="@+id/progressBar4"
+        android:id="@+id/progressBar3"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:max="4"
-        android:progress="4" />
+        android:progress="3" />
 
     <Button
-        android:id="@+id/pig_btn"
-        android:layout_width="match_parent"
+        android:id="@+id/rice_btn"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:text="돼지"
+        android:text="밥"
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/chicken_btn"
-        android:layout_width="match_parent"
+        android:id="@+id/noodle_btn"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:text="닭"
+        android:text="면"
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/sheep_btn"
-        android:layout_width="match_parent"
+        android:id="@+id/beef_btn"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:text="양"
+        android:text="고기"
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/cow_btn"
-        android:layout_width="match_parent"
+        android:id="@+id/soup_btn"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="국/탕"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/seafood_btn"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:text="소"
+        android:text="해산물"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/fry_btn"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="볶음"
         app:cornerRadius="30dp" />
 
 </LinearLayout>
