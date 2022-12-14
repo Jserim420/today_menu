@@ -147,30 +147,40 @@ public class MenuResultActivity extends AppCompatActivity {
                     case "분식":
                         foodCountry = "한식";
                         foodCategory = "분식";
+                        PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
                         break;
                     case "일식 국/탕":
                         foodCountry = "일식";
                         foodCategory = "국/탕";
+                        PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
                         break;
                     case "중식 볶음":
                         foodCountry = "중식";
                         foodCategory = "볶음";
+                        PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
                         break;
                     case "양식 빵":
                         foodCountry = "양식";
                         foodCategory = "빵";
+                        PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
                         break;
                     case "양식 채소":
                         foodCountry = "양식";
                         foodCategory = "채소";
+                        PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
                         break;
                     case "양식 국/탕":
                         foodCountry = "양식";
                         foodCategory = "국/탕";
+                        PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
+                        break;
+                    case " ":
+                    case "":
+                        PriceFoodList(resultTv, infoTv, info2Tv, info3Tv);
+                        break;
+                    default:
                         break;
                 }
-                Log.d("intentKind", intentKind);
-                PriceFryList(resultTv, infoTv, foodCategory, info2Tv, info3Tv);
             } else {
                 Log.d("FoodPriceUP", String.valueOf(foodPrice));
                 PriceFoodList(resultTv, infoTv, info2Tv, info3Tv);

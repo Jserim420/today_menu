@@ -149,17 +149,7 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
         });
     }
 
-    @Override
-    public void finish() {
-        mapViewContainer.removeView(mapView);
-        super.finish();
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mapViewContainer.removeAllViews();
-    }
 
     //     현재위치, 키워드를 가지고 음식점 표시하기(키워드가 공백이면 현재위치만 가지고 검색)
     private void drawPlace(String currentAdd, String keyword) {

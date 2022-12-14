@@ -243,18 +243,6 @@ public class MenuMapActivity extends AppCompatActivity implements MapView.Curren
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mapViewContainer.removeAllViews();
-    }
-
-    @Override
-    public void finish() {
-        mapViewContainer.removeView(mapView);
-        super.finish();
-    }
-
-    @Override
     public void onCurrentLocationUpdate(MapView mapView, MapPoint currentLocation, float accuracyInMeters) {
         MapPoint.GeoCoordinate mapPointGeo = currentLocation.getMapPointGeoCoord();
         Log.i(LOG_TAG, String.format("MapView onCurrentLocationUpdate (%f,%f) accuracy (%f)", mapPointGeo.latitude, mapPointGeo.longitude, accuracyInMeters));
