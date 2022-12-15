@@ -9,8 +9,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
-import com.example.today_menu.menuPick.MenuResultActivity;
 
 public class Temp extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class Temp extends AppCompatActivity {
                 editor.putString("FoodTaste", "매운거");
                 editor.apply();
 
-                Intent intent = new Intent(Temp.this, MenuResultActivity.class);
+                Intent intent = new Intent(Temp.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -51,7 +51,7 @@ public class Temp extends AppCompatActivity {
                 editor.putString("FoodTaste", "안매운거");
                 editor.apply();
 
-                Intent intent = new Intent(Temp.this, MenuResultActivity.class);
+                Intent intent = new Intent(Temp.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -63,7 +63,7 @@ public class Temp extends AppCompatActivity {
                 editor.putString("FoodTaste", "차가운거");
                 editor.apply();
 
-                Intent intent = new Intent(Temp.this, MenuResultActivity.class);
+                Intent intent = new Intent(Temp.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -75,7 +75,7 @@ public class Temp extends AppCompatActivity {
                 editor.putString("FoodTaste", "뜨거운거");
                 editor.apply();
                 
-                Intent intent = new Intent(Temp.this, MenuResultActivity.class);
+                Intent intent = new Intent(Temp.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

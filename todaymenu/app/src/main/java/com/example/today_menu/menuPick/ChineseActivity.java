@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 import com.example.today_menu.menuPick.taste.Spicy;
 import com.example.today_menu.menuPick.taste.Temp;
@@ -94,7 +95,7 @@ public class ChineseActivity extends AppCompatActivity {
         fryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChineseActivity.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseActivity.this, MenuResultPopup.class);
                 editor.putString("FoodCategory", fryBtn.getText().toString());
                 editor.apply();
 

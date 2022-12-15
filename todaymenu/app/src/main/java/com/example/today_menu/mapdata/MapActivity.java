@@ -2,7 +2,6 @@ package com.example.today_menu.mapdata;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -38,9 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.today_menu.LoginActivity;
-import com.example.today_menu.MainActivity;
 import com.example.today_menu.R;
-import com.example.today_menu.menuPick.MenuResultActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import net.daum.mf.map.api.CameraUpdateFactory;

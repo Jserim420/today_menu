@@ -10,8 +10,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
-import com.example.today_menu.menuPick.MenuResultActivity;
 
 public class Beef extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class Beef extends AppCompatActivity {
                 editor.putString("FoodTaste","소");
                 editor.apply();
 
-                Intent intent = new Intent(Beef.this, MenuResultActivity.class);
+                Intent intent = new Intent(Beef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -52,7 +52,7 @@ public class Beef extends AppCompatActivity {
                 editor.putString("FoodTaste","돼지");
                 editor.apply();
 
-                Intent intent = new Intent(Beef.this, MenuResultActivity.class);
+                Intent intent = new Intent(Beef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -65,7 +65,7 @@ public class Beef extends AppCompatActivity {
                 editor.putString("FoodTaste","닭");
                 editor.apply();
 
-                Intent intent = new Intent(Beef.this, MenuResultActivity.class);
+                Intent intent = new Intent(Beef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

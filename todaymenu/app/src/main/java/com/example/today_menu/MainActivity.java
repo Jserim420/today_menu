@@ -1,8 +1,6 @@
 package com.example.today_menu;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,15 +13,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.today_menu.mapdata.MapActivity;
 import com.example.today_menu.menuPick.MenuPriceActivity;
-import com.example.today_menu.menuPick.MenuResultActivity;
 import com.example.today_menu.menuPick.MenuStartActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,11 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.account:
-                //select account item
-                break;
-            case android.R.id.home:
-                //select back button
-                finish();
+                Intent myPageIntent = new Intent(MainActivity.this, MyPageActivity.class);
+                startActivity(myPageIntent);
                 break;
         }
         return super.onOptionsItemSelected(item);

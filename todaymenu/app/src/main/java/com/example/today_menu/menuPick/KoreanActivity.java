@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 import com.example.today_menu.menuPick.taste.Beef;
 import com.example.today_menu.menuPick.taste.Temp;
@@ -99,7 +100,7 @@ public class KoreanActivity extends AppCompatActivity {
                 editor.putString("FoodCategory", "분식");
                 editor.apply();
 
-                Intent intent = new Intent(KoreanActivity.this, MenuResultActivity.class);
+                Intent intent = new Intent(KoreanActivity.this, MenuResultPopup.class);
                 intent.putExtra("IntentKind", "분식");
                 startActivity(intent);
             }

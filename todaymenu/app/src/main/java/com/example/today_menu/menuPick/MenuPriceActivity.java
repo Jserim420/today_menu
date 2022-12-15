@@ -10,6 +10,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 
 public class MenuPriceActivity extends AppCompatActivity{
@@ -81,7 +82,7 @@ public class MenuPriceActivity extends AppCompatActivity{
     public void setIntent(String price, String intentKind) {
 
         if(intentKind.equals("random")) {
-            Intent intent = new Intent(MenuPriceActivity.this, MenuResultActivity.class);
+            Intent intent = new Intent(MenuPriceActivity.this, MenuResultPopup.class);
             intent.putExtra("IntentKind", "random");
             editor.putString("FoodPrice", price);
             editor.apply();

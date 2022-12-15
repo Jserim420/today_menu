@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 
 public class JapSeaFood extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class JapSeaFood extends AppCompatActivity {
                 editor.putString("FoodTaste", "안매운거");
                 editor.apply();
 
-                Intent intent = new Intent(JapSeaFood.this, MenuResultActivity.class);
+                Intent intent = new Intent(JapSeaFood.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -51,7 +52,7 @@ public class JapSeaFood extends AppCompatActivity {
                 editor.putString("FoodTaste", "차가운거");
                 editor.apply();
 
-                Intent intent = new Intent(JapSeaFood.this, MenuResultActivity.class);
+                Intent intent = new Intent(JapSeaFood.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -63,7 +64,7 @@ public class JapSeaFood extends AppCompatActivity {
                 editor.putString("FoodTaste", "따뜻한거");
                 editor.apply();
 
-                Intent intent = new Intent(JapSeaFood.this, MenuResultActivity.class);
+                Intent intent = new Intent(JapSeaFood.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

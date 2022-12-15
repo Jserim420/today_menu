@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 
 public class KorFlavor extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class KorFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "매운거");
                 editor.apply();
 
-                Intent intent = new Intent(KorFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -49,7 +50,7 @@ public class KorFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "안매운거");
                 editor.apply();
 
-                Intent intent = new Intent(KorFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -61,7 +62,7 @@ public class KorFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "깔끔한거");
                 editor.apply();
 
-                Intent intent = new Intent(KorFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -73,7 +74,7 @@ public class KorFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "짠거");
                 editor.apply();
 
-                Intent intent = new Intent(KorFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

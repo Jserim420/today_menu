@@ -11,6 +11,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 
 public class ChineseFlavor extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class ChineseFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "매운거");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -51,7 +52,7 @@ public class ChineseFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "안매운거");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -63,7 +64,7 @@ public class ChineseFlavor extends AppCompatActivity {
                 editor.putString("FoodTaste", "짠거");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseFlavor.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseFlavor.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

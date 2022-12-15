@@ -10,8 +10,8 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
-import com.example.today_menu.menuPick.MenuResultActivity;
 
 public class Spicy extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class Spicy extends AppCompatActivity {
                 editor.putString("FoodTaste", "매운거");
                 editor.apply();
 
-                Intent intent = new Intent(Spicy.this, MenuResultActivity.class);
+                Intent intent = new Intent(Spicy.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -47,7 +47,7 @@ public class Spicy extends AppCompatActivity {
                 editor.putString("FoodTaste", "안매운거");
                 editor.apply();
 
-                Intent intent = new Intent(Spicy.this, MenuResultActivity.class);
+                Intent intent = new Intent(Spicy.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

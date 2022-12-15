@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 
 public class ChineseBeef extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class ChineseBeef extends AppCompatActivity {
                 editor.putString("FoodTaste","소");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseBeef.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseBeef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -51,7 +52,7 @@ public class ChineseBeef extends AppCompatActivity {
                 editor.putString("FoodTaste","돼지");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseBeef.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseBeef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -64,7 +65,7 @@ public class ChineseBeef extends AppCompatActivity {
                 editor.putString("FoodTaste","닭");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseBeef.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseBeef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -76,7 +77,7 @@ public class ChineseBeef extends AppCompatActivity {
                 editor.putString("FoodTaste","양");
                 editor.apply();
 
-                Intent intent = new Intent(ChineseBeef.this, MenuResultActivity.class);
+                Intent intent = new Intent(ChineseBeef.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

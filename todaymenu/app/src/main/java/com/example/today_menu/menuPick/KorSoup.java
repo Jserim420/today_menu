@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.today_menu.MenuResultPopup;
 import com.example.today_menu.R;
 
 public class KorSoup extends AppCompatActivity {
@@ -38,7 +39,7 @@ public class KorSoup extends AppCompatActivity {
                 editor.putString("FoodTaste", "매운거");
                 editor.apply();
 
-                Intent intent = new Intent(KorSoup.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorSoup.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -50,7 +51,7 @@ public class KorSoup extends AppCompatActivity {
                 editor.putString("FoodTaste", "안매운거");
                 editor.apply();
 
-                Intent intent = new Intent(KorSoup.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorSoup.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }
@@ -62,7 +63,7 @@ public class KorSoup extends AppCompatActivity {
                 editor.putString("FoodTaste", "시원한거");
                 editor.apply();
 
-                Intent intent = new Intent(KorSoup.this, MenuResultActivity.class);
+                Intent intent = new Intent(KorSoup.this, MenuResultPopup.class);
                 setItem(intent);
                 startActivity(intent);
             }

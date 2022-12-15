@@ -44,6 +44,11 @@
 
         <activity android:name=".LoginActivity"/>
         <activity android:name=".JoinActivity"/>
+        <activity android:name=".MyPageActivity"/>
+        <activity android:name=".ChangePwPopup" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".MenuResultPopup" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".ImgPopup" android:theme="@android:style/Theme.Dialog" />
+
         <activity android:name=".menuPick.MenuStartActivity" />
         <activity android:name=".menuPick.MenuResultActivity" />
         <activity android:name=".menuPick.StartQuestionActivity"/>

@@ -18,7 +18,7 @@
         tools:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/result_tv"
+        android:id="@+id/menu_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -53,19 +53,6 @@
         app:cornerRadius="30dp" />
 
     <Button
-        android:id="@+id/again_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="45dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="다시하기"
-        android:textSize="20sp"
-        app:cornerRadius="30dp" />
-
-    <Button
         android:id="@+id/home_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,25 +64,5 @@
         android:text="메인화면으로 돌아가기"
         android:textSize="20sp"
         app:cornerRadius="30dp" />
-
-    <TextView
-        android:id="@+id/other_info_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="45dp"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/another_info_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="45dp"
-        android:gravity="center" />
 
 </LinearLayout>

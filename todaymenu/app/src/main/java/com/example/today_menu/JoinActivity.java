@@ -55,32 +55,32 @@ public class JoinActivity extends AppCompatActivity {
                 }
                 if(!password.equals(passwordConfirm)) {
                     Toast.makeText(JoinActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_LONG).show();
+                } else if(password.equals(passwordConfirm)){
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    auth.createUserWithEmailAndPassword(email, password)
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    FirebaseUser user = authResult.getUser();
+
+                                    Intent intent = new Intent(JoinActivity.this, LoginActivity.class);
+
+                                    intent.putExtra("email", email);
+                                    intent.putExtra("password", password);
+
+                                    startActivity(intent);
+
+                                    Toast.makeText(JoinActivity.this, "회원가입이 완료되었습니다.", Toast.LENGTH_LONG).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("JoinActivity", e.getMessage());
+                                    Toast.makeText(JoinActivity.this, "회원가입에 실패하였습니다.", Toast.LENGTH_LONG).show();
+                                }
+                            });
                 }
-
-                FirebaseAuth auth = FirebaseAuth.getInstance();
-                auth.createUserWithEmailAndPassword(email,password)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                FirebaseUser user = authResult.getUser();
-
-                                Intent intent = new Intent(JoinActivity.this, LoginActivity.class);
-
-                                intent.putExtra("email", email);
-                                intent.putExtra("password", password);
-
-                                startActivity(intent);
-
-                                Toast.makeText(JoinActivity.this, "회원가입이 완료되었습니다.", Toast.LENGTH_LONG).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("JoinActivity", e.getMessage());
-                                Toast.makeText(JoinActivity.this, "회원가입에 실패하였습니다.", Toast.LENGTH_LONG).show();
-                            }
-                        });
             }
         });
     }
